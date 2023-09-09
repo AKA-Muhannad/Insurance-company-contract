@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.20+commit.a1b79de6"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -208,6 +208,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "insuranceAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -246,6 +259,57 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "newAge",
+						"type": "uint256"
+					}
+				],
+				"name": "registeCustomer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registeInsurance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registeredCustomer",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registeredInsurance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -379,6 +443,16 @@
 						"internalType": "uint256",
 						"name": "userBalance",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startInsurance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endInsurance",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -504,11 +578,11 @@
 			]
 		},
 		"contracts/InsuranceContract.sol": {
-			"keccak256": "0x7505869f0b6e48e69049ba3a44b5baf9ff76283df389cf063f476bd52c442a99",
+			"keccak256": "0x446ab9248a5afb7d481b6513519b2f06712d74fe8aa8f0acf7b3e189eadf3729",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://630369b706030bd91d2908a478a04e520324faae05b4b519981393ecf2113d32",
-				"dweb:/ipfs/QmSjeW7VX6FoFzoz4MVxQubA8GKUfiDrjPJ2uhdAd9Jhe2"
+				"bzz-raw://20d928b089f113af0715be8f098094d7f6645b5c7d1a3ce222ba06c71b9a5fcc",
+				"dweb:/ipfs/QmXutxiEsYRxisRuaE4FwRZphy3wYK6ZeY4FYFBFp9CxVL"
 			]
 		}
 	},

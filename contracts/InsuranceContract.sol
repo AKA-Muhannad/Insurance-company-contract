@@ -11,10 +11,6 @@ contract InsuranceContract is ERC20, Ownable {
 
     constructor() ERC20("Muhannad Insurance", "MIT") {}
 
-    function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount);
-    }
-
     mapping(address => User) public users;
 
     struct User {
@@ -25,39 +21,33 @@ contract InsuranceContract is ERC20, Ownable {
         uint startInsurance;
         uint endInsurance;
     }
-    modifier checkUser() {
+    
+    function registeCustomer(string memory newName, uint newAge) public payable{
         require(
-            users[msg.sender].userAddress == msg.sender,
-            "You don't have membership"
+            newAge >= 18,
+            "You are under the age"
         );
-        _;
-    }
-    modifier checkBalance() {
         require(
             //                              1 as default amount
-            users[msg.sender].userBalance >= 1,
+            balanceOf(msg.sender) <= 0,
             "You don't have balance enough"
         );
-        _;
-    }
-
-    function registeCustomer(string memory newName, uint newAge) public {
+        require(
+            //                              current time
+            users[msg.sender].startInsurance <= 0,
+            "Your Insurance is expired"
+        );
         uint newBalance = balanceOf(msg.sender);
+        transferFrom(msg.sender, insuranceAddress, 0);
         users[msg.sender] = User(
             newName,
             msg.sender,
             newAge,
             newBalance,
-            0,
-            0
+            block.timestamp,
+            block.timestamp + 31556926
         );
         registeredCustomer++;
-    }
-    function registeInsurance() public {
-        //           from me to osama with 1 Wei   
-        transferFrom(msg.sender, insuranceAddress, 1);
-        users[msg.sender].startInsurance = block.timestamp; // time of start the registration which's now
-        users[msg.sender].endInsurance = block.timestamp + 31556926; // time of end the registration which's after 1 year
         registeredInsurance++;
     }
 }

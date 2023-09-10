@@ -221,24 +221,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "mint",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -279,14 +261,7 @@
 				],
 				"name": "registeCustomer",
 				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "registeInsurance",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -578,11 +553,11 @@
 			]
 		},
 		"contracts/InsuranceContract.sol": {
-			"keccak256": "0x446ab9248a5afb7d481b6513519b2f06712d74fe8aa8f0acf7b3e189eadf3729",
+			"keccak256": "0x161c5a7a57fda59cefa59d3121711fd32f8ad5bb0f3b994f00a52fb4f278f896",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://20d928b089f113af0715be8f098094d7f6645b5c7d1a3ce222ba06c71b9a5fcc",
-				"dweb:/ipfs/QmXutxiEsYRxisRuaE4FwRZphy3wYK6ZeY4FYFBFp9CxVL"
+				"bzz-raw://d043a1423a8c1d6faf8189ff773d368beecfab2f5054041c13631a3fb36de149",
+				"dweb:/ipfs/QmNWJkgj494npfcuRAeF3RNEWtD2HMbuPH8nCMGRabH9nD"
 			]
 		}
 	},

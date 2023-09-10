@@ -6,8 +6,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract InsuranceContract is ERC20, Ownable {
     address public insuranceAddress = 0xd7b5B1e52369F1402Ba350d7f5Dd3D247717c157; // Osama's insurance company address
-    uint public registeredInsurance; // number of insurance
-    uint public registeredCustomer; // number of customers
+    uint public registeredInsurance;
+    uint public registeredCustomer;
 
     constructor() ERC20("Muhannad Insurance", "MIT") {}
 
@@ -28,12 +28,10 @@ contract InsuranceContract is ERC20, Ownable {
             "You are under the age"
         );
         require(
-            //                              1 as default amount
             balanceOf(msg.sender) <= 0,
             "You don't have balance enough"
         );
         require(
-            //                              current time
             users[msg.sender].startInsurance <= 0,
             "Your Insurance is expired"
         );

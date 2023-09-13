@@ -261,6 +261,13 @@
 				],
 				"name": "registeCustomer",
 				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registeInsurance",
+				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
 			},
@@ -416,11 +423,6 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "userBalance",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
 						"name": "startInsurance",
 						"type": "uint256"
 					},
@@ -553,11 +555,11 @@
 			]
 		},
 		"contracts/InsuranceContract.sol": {
-			"keccak256": "0x7a6366cbcd36ebf0bb5a2fc67865dde8437d4c4b1ed6149dd2c496737250144d",
+			"keccak256": "0x2f7e09150b2a8194fcdcc642b1fd3fb75e61b01ee0b37953dc0c1683d6a36ae9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6bd11add50c672c285fa7db137a83d8fd0170b27dee425fc844f10d447c5e896",
-				"dweb:/ipfs/QmZ2TdiAkcfb6CQ5bBVR9yEPm25edqtkMD9pP4QLmCZENq"
+				"bzz-raw://c06c444583693ac38c7eadd9d9230b2fad9d5d8621d38033c45936eff8b72353",
+				"dweb:/ipfs/QmcLcfMwFy1FocqkXV8n4Z5XRqMdPkx6xRyfKsbKKyRzC4"
 			]
 		}
 	},

@@ -17,35 +17,51 @@ contract InsuranceContract is ERC20, Ownable {
         string userName;
         address userAddress;
         uint userAge;
-        uint userBalance;
         uint startInsurance;
         uint endInsurance;
     }
-    
-    function registeCustomer(string memory newName, uint newAge) public payable{
+    // To create a customer
+    function registeCustomer(string memory newName, uint newAge) public onlyOwner{
+        require(
+            users[msg.sender].userAddress != msg.sender,
+            "You are already have "
+        );
         require(
             newAge >= 18,
             "You are under the age"
         );
         require(
-            balanceOf(msg.sender) <= 0,
-            "You don't have balance enough"
-        );
-        require(
             users[msg.sender].startInsurance <= 0,
             "Your Insurance is expired"
         );
-        uint newBalance = balanceOf(msg.sender);
-        transferFrom(msg.sender, insuranceAddress, 0);
         users[msg.sender] = User(
             newName,
             msg.sender,
             newAge,
-            newBalance,
-            block.timestamp,
-            block.timestamp + 31556926
+            0,
+            0
         );
         registeredCustomer++;
+    }
+    // To Subscribe - Like - Share
+    function registeInsurance() public payable {
+        require(
+            users[msg.sender].userAddress == msg.sender,
+            "You are not a customer"
+        );
+        require(
+            balanceOf(msg.sender) >= 0,
+            "You don't have balance enough"
+        );
+        require(
+            users[msg.sender].endInsurance < block.timestamp,
+            "Your Insurance is still active"
+        );
+        transferFrom(msg.sender, insuranceAddress, 0);
+        // starts now
+        users[msg.sender].startInsurance = block.timestamp;
+        // ends after 1 year from now
+        users[msg.sender].endInsurance = block.timestamp + 31556926;
         registeredInsurance++;
     }
 }
